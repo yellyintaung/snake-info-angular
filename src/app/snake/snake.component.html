@@ -1,0 +1,49 @@
+<style>
+  th,
+  td {
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  td {
+    vertical-align: middle;
+  }
+  th {
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-hover text-nowrap">
+      <thead>
+        <th>Name</th>
+        <th>Photo</th>
+        <th>Venom</th>
+        <th>Location</th>
+        <th>Action</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let snake of snakeList">
+          <td>{{ snake.name }}</td>
+          <td>
+            <img src="{{ snake.photo }}" alt="" width="150" height="100" />
+          </td>
+          <td class="text-danger"><b>{{ snake.venom }}</b></td>
+          <td>{{ snake.location }}</td>
+          <td>
+            <button class="btn btn-success btn-sm" [routerLink]="['/snake/snake_detail/',snake.id]">
+              Show Detail
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- <div class="col-md-4">
+    <app-snake-detail [snake]="selectedSnake" (snakeDelete)="deleteSnake($event)"></app-snake-detail>
+  </div> -->
+</div>

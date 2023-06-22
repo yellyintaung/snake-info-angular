@@ -1,0 +1,45 @@
+<div *ngIf="snake">
+  <h3>Cuttie Snake Detail</h3>
+  <div class="snake-data pt-3">
+    <img
+      src="{{ snake.photo }}"
+      alt=""
+      class="text-center"
+      width="200"
+      height="150"
+    /><br /><br />
+
+    <div class="input-group mb-3">
+      <label class="input-group-text" for="movie-name">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="snake.name"
+        style="height: 40px"
+      />
+    </div>
+    <label for="movie-name">Venom</label>
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="snake.venom"
+        style="height: 40px"
+      />
+    </div>
+    <label for="movie-name">Location</label>
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="snake.location"
+        style="height: 40px"
+      />
+    </div>
+
+    <p>{{ snake.desription }}</p>
+    <button class="btn btn-danger btn-sm float-right" [routerLink]="['/snake']">
+      back
+    </button>
+  </div>
+</div>
